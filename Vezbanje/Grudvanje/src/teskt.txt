@@ -1,0 +1,24 @@
+Jednog dana na igralistu doslo je do svadje izmedju dva sneska belica. Posto nisu mogli da rese
+raspravu, dogovorili su se da se grudvaju do smrti. Svakog sneska karakterise naziv, broj zivota i
+snaga bacanja grudve. Gradjaju se naizmenicno, ali postoji mogucnost da snesko koji gadja promasi
+drugog sneska (50% verovatnoca). Ispisati ko ce biti pobednik grudvanja.
+
+snesko (klasa):
+• Atributi:
+o naziv: String
+o snaga: int
+o brojZivota: int
+
+• Konstruktor:
+o Konstruktoru se prosledjuju vrednosti za naziv, snagu i broj zivota
+
+• Metode:
+o siZiv(): boolean - vraca true ili false u zavisnosti od toga da li je snesko ziv. snesko
+nije ziv, ako mu je broj zivota jednak nuli
+o ukloniZivote(int x): void - umanjuje broj zivota za kolicinu x, broj zivota mora biti veci
+ili jednak nuli
+o gadjaj(snesko snesko): void - gadja sneska s tako sto mu uklanja onoliko zivota kolika
+mu je snaga
+
+Main (klasa): Sadrzi main metodu i simulira grudvanje dva sneska do njihove smrti i ispisuje
+pobednika
