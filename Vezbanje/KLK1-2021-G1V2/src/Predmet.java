@@ -6,7 +6,7 @@ public class Predmet {
     private String naziv;
     private int semestar;
     private int espb;
-    OznakaPlana oznakaPlana;
+    private OznakaPlana oznakaPlana;
     private List<Predmet> preduslovi;
 
     public Predmet(String naziv, int semestar, int espb, OznakaPlana oznakaPlana, List<Predmet> preduslovi) {
@@ -15,6 +15,10 @@ public class Predmet {
         this.espb = espb;
         this.oznakaPlana = oznakaPlana;
         this.preduslovi = new ArrayList<>();
+    }
+
+    public void dodajPreduslov(Predmet predmet) {
+        // TODO
     }
 
     public String getNaziv() {
@@ -55,9 +59,5 @@ public class Predmet {
 
     public void setPreduslovi(List<Predmet> preduslovi) {
         this.preduslovi = preduslovi;
-    }
-
-    public void dodajPreduslov(Predmet predmet) {
-
     }
 }

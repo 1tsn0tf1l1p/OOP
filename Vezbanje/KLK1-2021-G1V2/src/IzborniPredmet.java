@@ -8,7 +8,7 @@ public class IzborniPredmet extends Predmet implements IzborStudenta{
     }
 
     @Override
-    public boolean mozeDaIzabere() {
-        return false;
+    public boolean mozeDaIzabere(Student student) {
+        // TODO
     }
 }
