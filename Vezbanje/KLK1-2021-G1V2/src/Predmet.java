@@ -17,10 +17,6 @@ public class Predmet {
         this.preduslovi = new ArrayList<>();
     }
 
-    public void dodajPreduslov(Predmet predmet) {
-        // TODO
-    }
-
     public String getNaziv() {
         return naziv;
     }
@@ -59,5 +55,14 @@ public class Predmet {
 
     public void setPreduslovi(List<Predmet> preduslovi) {
         this.preduslovi = preduslovi;
+    }
+
+    public void dodajPreduslov(Predmet predmet) {
+        if(predmet.getOznakaPlana() == this.getOznakaPlana() && predmet.semestar < this.semestar) {
+            this.preduslovi.add(predmet);
+        }
+        else {
+            System.out.println("Nije moguce dodati preduslov!");
+        }
     }
 }

@@ -1,5 +1,5 @@
 public interface IzborStudenta {
 
-    boolean mozeDaIzabere(Student student);
+    public boolean mozeDaIzabere(Student student);
 
 }
