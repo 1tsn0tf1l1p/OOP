@@ -7,7 +7,12 @@ public class ProzniPisac extends Pisac{
     @Override
     public Knjizevnost objavljuje(String naziv, int godina, TipKnjizevnosti tipKnjizevnosti) {
 
-        return new AutorskaKnjizevnost(naziv, TipKnjizevnosti.EPIKA);
+        Knjizevnost k = new AutorskaKnjizevnost(naziv, TipKnjizevnosti.EPIKA);
+
+        ((AutorskaKnjizevnost) k).setGodina(godina);
+        ((AutorskaKnjizevnost) k).setAutor(this);
+
+        return k;
 
     }
 }

@@ -11,16 +11,25 @@ public class IzbornaGrupa implements IzborStudenta{
 
     @Override
     public boolean mozeDaIzabere(Student student) {
-        if(student.jePonovac()) {
+        if (student.jePonovac()) {
             return false;
         }
-        if(!(this.oznaka.charAt(0) == student.vratiTrenutnuGodinuStudija())) {
+        if ((oznaka.charAt(0) == student.vratiTrenutnuGodinuStudija())) {
             return false;
         }
-        if(!(this.plan == student.getPlan())) {
+        if (!(student.getPlan() == this.plan)) {
             return false;
         }
-        if()
+
+        for (Predmet predmet : student.getPolozeniPredmeti()) {
+
+            if (!(student.getPolozeniPredmeti().equals(predmet))) {
+                return false;
+            }
+
+        }
+
+        return true;
 
     }
 
@@ -49,7 +58,20 @@ public class IzbornaGrupa implements IzborStudenta{
     }
 
     public boolean dodajPredmet(IzborniPredmet izborniPredmet) {
-        // TODO
+        int semestar = izborniPredmet.getSemestar();
+        if((semestar*2 == (int)this.oznaka.charAt(0) ||
+           semestar*2 == (int)this.oznaka.charAt(0) - 1) &&
+                ((izborniPredmet.getOznakaPlana() == this.plan) &&
+                (!predmeti.contains(izborniPredmet)))) {
+
+                    predmeti.add(izborniPredmet);
+                    return true;
+
+        }
+        else {
+            return false;
+        }
+
     }
 
 }

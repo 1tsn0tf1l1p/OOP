@@ -6,6 +6,7 @@ public class ResenjeTesta implements Ocenljivo{
     private String nazivTesta;
     private String kandidat;
     private List<Odgovor> odgovori;
+    private int ocena;
 
     public ResenjeTesta(String nazivTesta, String kandidat) {
         this.nazivTesta = nazivTesta;
