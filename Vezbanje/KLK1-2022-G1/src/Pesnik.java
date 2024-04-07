@@ -7,7 +7,12 @@ public class Pesnik extends Pisac{
     @Override
     public Knjizevnost objavljuje(String naziv, int godina, TipKnjizevnosti tipKnjizevnosti) {
 
-        return new AutorskaKnjizevnost(naziv, TipKnjizevnosti.LIRIKA);
+        Knjizevnost k = new AutorskaKnjizevnost(naziv, TipKnjizevnosti.LIRIKA);
+
+        ((AutorskaKnjizevnost) k).setGodina(godina);
+        ((AutorskaKnjizevnost) k).setAutor(this);
+
+        return k;
 
     }
 }

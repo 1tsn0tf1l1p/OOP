@@ -73,7 +73,7 @@ public class Registracija {
 
         Korisnik prijavljeniKorisnik = null;
 
-        for(Korisnik k:prijavljeni) {
+        for(Korisnik k:registrovani) {
             if(k.getKorisnickoIme().equals(korisnickoIme)) {
                 if(k.getLozinka().equals(lozinka)) {
                     prijavljeniKorisnik = k;

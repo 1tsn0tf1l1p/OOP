@@ -35,4 +35,9 @@ public abstract class Knjizevnost implements Comparable<Knjizevnost> {
         return Objects.equals(naziv, that.naziv) && tipKnjizevnosti == that.tipKnjizevnosti;
     }
 
+    @Override
+    public int compareTo(Knjizevnost knjizevnost) {
+        // vraca 0 ako su isti, 1 ako je prvi veci, -1 ako je drugi
+        return this.naziv.compareTo(knjizevnost.naziv);
+    }
 }

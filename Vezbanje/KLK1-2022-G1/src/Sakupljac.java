@@ -18,7 +18,10 @@ public class Sakupljac implements Objavljivanje{
     @Override
     public Knjizevnost objavljuje(String naziv, int godina, TipKnjizevnosti tipKnjizevnosti) {
 
-        return new NarodnaKnjizevnost(naziv, tipKnjizevnosti);
+        Knjizevnost k = new NarodnaKnjizevnost(naziv, tipKnjizevnosti);
+        ((NarodnaKnjizevnost) k).setSakupljac(this);
+
+        return k;
 
     }
 
