@@ -1,0 +1,1 @@
+Obuka{naziv='UUP', minimalanBrojPolaznika=3, oblast=STATISTIKA, predavaci=[], obukePolaznika=[]}Obuka{naziv='UUP', minimalanBrojPolaznika=3, oblast=STATISTIKA, predavaci=[], obukePolaznika=[]}
