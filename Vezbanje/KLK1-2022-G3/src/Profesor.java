@@ -68,6 +68,7 @@ public class Profesor implements Registracija{
         if(this.obuke.size()>3) {
             return false;
         }
+        /*
         if(obuka instanceof Projekat) {
             if(obuka.getPredavaci().size()<((Projekat) obuka).getMaksimalanBrojPolaznika()) {
                 obuke.add(obuka);
@@ -76,6 +77,12 @@ public class Profesor implements Registracija{
             }else{
                 return false;
             }
+        }
+
+         */
+
+        if(obuka instanceof Projekat) {
+            if(obuka.getPredavaci().size() < ((Projekat) obuka).getMaksimalanBrojPolaznika())
         }
 
         obuke.add(obuka);
