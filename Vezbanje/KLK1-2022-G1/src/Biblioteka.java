@@ -30,7 +30,7 @@ public class Biblioteka {
     }
 
     public void dodajKnjigu(Knjizevnost knjizevnost) {
-        this.getKnjige().add(knjizevnost);
+        this.knjige.add(knjizevnost);
     }
 
     public void sortirajKnjige() {
@@ -41,7 +41,7 @@ public class Biblioteka {
 
     public void ispisSvihKnjiga() {
 
-        sortirajKnjige();
+        knjige.sort(null);
 
         System.out.println("Knjige na raspolaganju u biblioteci "+getNaziv()+":");
 
@@ -53,9 +53,16 @@ public class Biblioteka {
 
     public Pisac najcitanijiPisac() {
 
-        for(Knjizevnost k:knjige) {
-            if(k instanceof AutorskaKnjizevnost) {
+        List<NajcitanijiPisac> najcitanijiPisci = new ArrayList<>();
+        int max = 0;
 
+        for(Knjizevnost knjizevnost:knjige) {
+            if(knjizevnost instanceof AutorskaKnjizevnost) {
+                for(NajcitanijiPisac np:najcitanijiPisci) {
+                    if(np.equals(((AutorskaKnjizevnost)knjizevnost).getAutor()) {
+
+                    }
+                }
             }
         }
 
