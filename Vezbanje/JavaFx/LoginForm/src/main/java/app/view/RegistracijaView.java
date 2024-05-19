@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -83,6 +84,46 @@ public class RegistracijaView extends VBox {
             }
         };
         btnRegistrujSe.setOnAction(ehRegistrujSe);
+
+        this.setOnKeyPressed(e -> {
+            if(e.isControlDown() && e.getCode() == KeyCode.S) {
+                String unetoIme = tfIme.getText();
+                String unetoPrezime = tfPrezime.getText();
+                String unetiEmail = tfEmail.getText();
+                String unetaLozinka = tfLozinka.getText();
+
+                if(!(unetiEmail.contains("@gmail.com") || unetiEmail.contains("@yahoo.com") || unetiEmail.contains("@outlook.com"))) {
+                    nakonRegistracije.setText("Email u losem formatu!");
+                    return;
+                }
+
+                Korisnik korisnik = new Korisnik(unetoIme, unetoPrezime, unetiEmail, unetaLozinka);
+                if(Baza.getInstance().getRegistrovaniKorisnici().contains(korisnik)) {
+                    nakonRegistracije.setText("Uneti podaci su vec registrovani!");
+                }
+                else {
+                    Baza.getInstance().getRegistrovaniKorisnici().add(korisnik);
+                    nakonRegistracije.setText("Upesno ste se registrovali!");
+                    System.out.println("Registrovani korisnici: " + korisnik.toString());
+                    tfIme.clear();
+                    tfPrezime.clear();
+                    tfEmail.clear();
+                    tfLozinka.clear();
+
+                    try {
+                        PrintWriter printWriter = new PrintWriter("registrovani.txt");
+
+                        printWriter.write(korisnik.toString());
+                        printWriter.close();
+
+                    } catch (FileNotFoundException eer) {
+                        throw new RuntimeException(eer);
+                    }
+
+                }
+            }
+
+        });
 
         btnLogIn.setOnAction(e ->{
             String email = logInEmail.getText();

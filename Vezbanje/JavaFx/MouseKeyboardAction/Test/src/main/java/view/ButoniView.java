@@ -5,6 +5,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
@@ -29,6 +30,11 @@ public class ButoniView extends VBox {
         });
         bttnPrikaz.setOnMouseClicked(e -> {
             registar.setText("KLIKNULI STE NA DUGME");
+        });
+        this.setOnKeyPressed(e -> {
+            if(e.isControlDown() && e.getCode() == KeyCode.C) {
+                registar.setText("KLIKNUTO");
+            }
         });
     }
 
