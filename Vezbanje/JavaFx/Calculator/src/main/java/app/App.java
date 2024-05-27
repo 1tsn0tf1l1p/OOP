@@ -6,10 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -20,7 +17,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         VBox vbox = new VBox();
-        Scene scene = new Scene(vbox);
+        Scene scene = new Scene(vbox, 400, 400);
 
         stage.setTitle("Calculator");
 
@@ -45,19 +42,33 @@ public class App extends Application {
         gridPane.setHgap(10);
         gridPane.setVgap(10);
 
-        gridPane.addRow(0, b7, b8, b9);
+        gridPane.addRow(0, b7, b8, b9, b0);
         gridPane.addRow(1, b4, b5, b6);
         gridPane.addRow(2, b1, b2, b3);
 
         gridPane.setPadding(new Insets(10, 10, 10, 10));
 
-        ColumnConstraints colConstraints = new ColumnConstraints();
-        colConstraints.setPercentWidth(33);
-        gridPane.getColumnConstraints().addAll(colConstraints, colConstraints);
+        ColumnConstraints col1 = new ColumnConstraints();
+        col1.setPercentWidth(33);
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setPercentWidth(33);
 
-        RowConstraints rowConstraints = new RowConstraints();
-        rowConstraints.setPercentHeight(33);
-        gridPane.getRowConstraints().addAll(rowConstraints, rowConstraints);
+        RowConstraints row1 = new RowConstraints();
+        row1.setPercentHeight(33);
+        RowConstraints row2 = new RowConstraints();
+        row2.setPercentHeight(33);
+        RowConstraints row3 = new RowConstraints();
+        row3.setPercentHeight(33);
+
+        GridPane.setVgrow(b7, Priority.ALWAYS);
+        GridPane.setVgrow(b4, Priority.ALWAYS);
+        GridPane.setVgrow(b1, Priority.ALWAYS);
+
+        gridPane.getRowConstraints().addAll(row1, row2, row3);
+
+
+        gridPane.getColumnConstraints().addAll(col1, col2, col2, col2);
+
 
         gridPane.setAlignment(Pos.CENTER);
 
