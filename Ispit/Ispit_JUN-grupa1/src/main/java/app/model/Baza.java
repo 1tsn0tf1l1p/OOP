@@ -48,4 +48,8 @@ public class Baza {
     public static int getRaspolozivo() {
         return raspolozivo;
     }
+
+    public static void setRaspolozivo(int raspolozivo) {
+        Baza.raspolozivo = raspolozivo;
+    }
 }

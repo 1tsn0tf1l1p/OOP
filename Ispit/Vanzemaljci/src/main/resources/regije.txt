@@ -1,0 +1,7 @@
+Afrika: 12
+Antarktik: 6
+Australija: 22
+Azija: 12
+Evropa: 25
+Juzna Amerika: 4
+Severna Amerika: 16

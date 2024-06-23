@@ -1,5 +1,7 @@
 package app.model;
 
+import java.util.Objects;
+
 public class Kurs {
     private String naziv;
     private String kategorija;
@@ -48,5 +50,18 @@ public class Kurs {
     @Override
     public String toString() {
         return this.kategorija + ", " + this.naziv + ", Trajanje: " + this.trajanje + " min, " + this.cena;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Kurs kurs = (Kurs) o;
+        return Objects.equals(naziv, kurs.naziv) && Objects.equals(kategorija, kurs.kategorija) && Objects.equals(trajanje, kurs.trajanje) && Objects.equals(cena, kurs.cena);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(naziv, kategorija, trajanje, cena);
     }
 }
